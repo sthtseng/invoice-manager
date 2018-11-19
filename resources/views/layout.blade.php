@@ -4,7 +4,8 @@ header('Content-Type: text/html; charset=utf-8');
 <!DOCTYPE HTML>
 <html>
 	<head>
-	    <title>@yield('title', 'Invoice Manager')</title>
+		<title>@yield('title', 'Invoice Manager')</title>
+		<link rel="stylesheet" type="text/css" href="/css/app.css">
 	</head>
 
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -15,7 +16,7 @@ header('Content-Type: text/html; charset=utf-8');
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="./dashboard">Invoice Manager</a>
+				<a class="navbar-brand" href="/">Invoice Manager</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="myNavbar">
@@ -32,5 +33,7 @@ header('Content-Type: text/html; charset=utf-8');
 			@yield('content')
 
 		</div>
+
+		<script src="/js/app.js"></script>
 	</body>
 </html>
