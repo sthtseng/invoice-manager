@@ -12,5 +12,6 @@
 */
 
 Route::get('/', 'PagesController@dashboard');
-Route::post('/invoices', 'PagesController@store');
+Route::post('/invoices', 'PagesController@postInvoice');
 Route::get('/invoices/create', 'PagesController@create');
+Route::get('/invoices/{id}', 'PagesController@edit');

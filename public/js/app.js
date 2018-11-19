@@ -13922,14 +13922,25 @@ var app = new Vue({
     el: '#app'
 });
 
+// delete a payment or product row
+function deleteBtnClickHandler() {
+    $(this).closest('.form-row').remove();
+}
+
 $(document).ready(function () {
+    $('.delete-row-btn').click(deleteBtnClickHandler);
+
     $("#add-product-btn").click(function () {
         $('#products-group').append($('.product-row-template').html());
+        $('#products-group .form-row:last-child .delete-row-btn').click(deleteBtnClickHandler);
     });
 
     $("#add-payment-btn").click(function () {
         $('#payments-group').append($('.payment-row-template').html());
+        $('#payments-group .form-row:last-child .delete-row-btn').click(deleteBtnClickHandler);
     });
+
+    $(".delete-invoice-btn").click(function () {});
 });
 
 /***/ }),

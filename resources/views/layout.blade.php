@@ -16,13 +16,14 @@ header('Content-Type: text/html; charset=utf-8');
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-				<li class="nav-item"><a class="nav-link" href="/invoices/create">Create Invoice</a></li>
+				<li class="nav-item"><a class="nav-link" href="/invoices/create">Create New Invoice</a></li>
 			</ul>
 		</div>
 	</nav>
 
 	<body>
-		<div class="container" style='margin-top:20px'>
+		<div class="container" style='margin:20px auto'>
+			<h2 style='text-align:center'> @yield('title') </h2>
 
 			@yield('content')
 

@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Dashboard | Invoice Manager')
+@section('title', 'Create New Invoice')
 
 @section('content')
 
@@ -10,6 +10,11 @@
 			<form method='POST' action='/invoices'>
 
 				{{ csrf_field() }}
+
+				<div class="form-group">
+					<label>Invoice Number</label>
+					<input type='text' name='invoice_number' class="form-control" placeholder='Invoice Number' required>
+				</div>
 
 				<div class="form-group">
 					<label>Customer Name</label>
@@ -55,47 +60,55 @@
 			</form>
 
 			<div class='product-row-template' style='display:none'>
-				<div class='form-row'>
-					<div class="form-group col">
-						<label>Product Name</label>
-						<select class="form-control" name='product_id[]'>
-							@foreach ($products as $product)
-								<option value={{ $product->id }}>{{ $product->name }}</option>
-							@endforeach
-						</select>
-					</div>
-					<div class="form-group col">
-						<label>Quantity</label>
-						<input type='number' name='product_quantity[]' placeholder='Quantity' class="form-control" required>
-					</div>
-					<div class="form-group col">
-						<label>Price</label>
-						<input type='number' name='product_price[]' placeholder='Price' class="form-control" required>
-					</div>
-					<div class="form-group col">
-						<label>Tax</label>
-						<input type='number' name='product_tax[]' placeholder='Tax' class="form-control" required>
-					</div>
-				</div>
-			</div>
-
-			<div class='payment-row-template' style='display:none'>
-				<div class='form-row'>
-					<div class="form-group col">
-						<label>Payment Type</label>
-						<select class="form-control" name='payment_type_id[]'>
-							@foreach ($paymentTypes as $paymentType)
-								<option value={{ $paymentType->id }}>{{ $paymentType->name }}</option>
-							@endforeach
-						</select>
-					</div>
-
-					<div class="form-group col">
-						<label>Amount</label>
-						<input type='number' name='payment_amount[]' placeholder='Amount' class="form-control" required>
+					<div class='form-row'>
+						<div class="form-group col">
+							<label>Product Name</label>
+							<select class="form-control" name='product_name[]'>
+								@foreach ($products as $product)
+									<option>{{ $product->name }}</option>
+								@endforeach
+							</select>
+						</div>
+						<div class="form-group col">
+							<label>Quantity</label>
+							<input type='number' name='product_quantity[]' placeholder='Quantity' class="form-control" required>
+						</div>
+						<div class="form-group col">
+							<label>Price</label>
+							<input type='number' name='product_price[]' placeholder='Price' class="form-control" required>
+						</div>
+						<div class="form-group col">
+							<label>Tax</label>
+							<input type='number' name='product_tax[]' placeholder='Tax' class="form-control" required>
+						</div>
+						<button type="button" class="btn btn-danger btn-sm delete-row-btn">
+							Delete
+						</button>
 					</div>
 				</div>
-			</div>
+	
+				<div class='payment-row-template' style='display:none'>
+					<div class='form-row'>
+						<div class="form-group col">
+							<label>Payment Type</label>
+							<select class="form-control" name='payment_type[]'>
+								@foreach ($paymentTypes as $paymentType)
+									<option>{{ $paymentType->name }}</option>
+								@endforeach
+							</select>
+						</div>
+	
+						<div class="form-group col">
+							<label>Amount</label>
+							<input type='number' name='payment_amount[]' placeholder='Amount' class="form-control" required>
+						</div>
+	
+						<button type="button" class="btn btn-danger btn-sm delete-row-btn">
+							Delete
+						</button>
+					</div>
+				</div>
+
 		</div>
 	</div>
 
