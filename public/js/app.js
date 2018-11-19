@@ -13919,7 +13919,17 @@ Vue.component('example-component', __webpack_require__(39));
  */
 
 var app = new Vue({
-  el: '#app'
+    el: '#app'
+});
+
+$(document).ready(function () {
+    $("#add-product-btn").click(function () {
+        $('#products-group').append($('.product-row-template').html());
+    });
+
+    $("#add-payment-btn").click(function () {
+        $('#payments-group').append($('.payment-row-template').html());
+    });
 });
 
 /***/ }),

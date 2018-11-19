@@ -17,6 +17,7 @@ class CreatePurchasesTable extends Migration
             $table->increments('id');
             $table->integer('invoice_id');
             $table->integer('product_id');
+            $table->integer('quantity');
             $table->double('price', 20, 2);
             $table->double('tax', 20, 2);
             $table->timestamps();

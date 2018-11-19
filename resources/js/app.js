@@ -31,3 +31,14 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 const app = new Vue({
     el: '#app'
 });
+
+
+$(document).ready(function() {
+    $("#add-product-btn").click(function(){
+        $('#products-group').append($('.product-row-template').html());
+    });
+
+    $("#add-payment-btn").click(function(){
+        $('#payments-group').append($('.payment-row-template').html());
+    });
+});

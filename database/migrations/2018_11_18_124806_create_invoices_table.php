@@ -16,10 +16,10 @@ class CreateInvoicesTable extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id');
             $table->string('customer_name', 128);
-            $table->string('address', 256);
+            $table->string('address', 256)->nullable();
             $table->dateTime('invoice_date');
             $table->dateTime('due_date');
-            $table->text('note');
+            $table->text('note')->nullable();
             $table->smallInteger('deleted');
             $table->timestamps();
         });
