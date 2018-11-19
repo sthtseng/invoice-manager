@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'PagesController@dashboard');
+Route::post('/invoices', 'PagesController@store');
+Route::get('/invoices/create', 'PagesController@create');

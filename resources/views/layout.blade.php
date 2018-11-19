@@ -5,8 +5,6 @@ header('Content-Type: text/html; charset=utf-8');
 <html>
 	<head>
 	    <title>@yield('title', 'Invoice Manager')</title>
-	    <link rel="stylesheet" type="text/css" href="public/assets/css/bootstrap.min.css">
-	    <link rel="stylesheet" type="text/css" href="public/assets/css/style.css">
 	</head>
 
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -33,9 +31,6 @@ header('Content-Type: text/html; charset=utf-8');
 
 			@yield('content')
 
-		</div><!-- end container -->
-		<script src="public/assets/js/jquery.min.js"></script>
-	    <script src="public/assets/js/bootstrap.min.js"></script>
-	    <script src="public/assets/js/script.js"></script>
+		</div>
 	</body>
 </html>
