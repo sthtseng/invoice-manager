@@ -13940,7 +13940,19 @@ $(document).ready(function () {
         $('#payments-group .form-row:last-child .delete-row-btn').click(deleteBtnClickHandler);
     });
 
-    $(".delete-invoice-btn").click(function () {});
+    $(".delete-invoice-btn").click(function () {
+        var invoiceId = $(this).data('id');
+        // $.post( "invoices/delete", {id: invoiceId});
+        $.ajax({
+            type: 'POST',
+            url: '/invoices/delete',
+            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+            data: { id: invoiceId },
+            success: function success(data) {
+                location.replace('/');
+            }
+        });
+    });
 });
 
 /***/ }),

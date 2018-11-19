@@ -52,5 +52,16 @@ $(document).ready(function() {
     });
 
     $(".delete-invoice-btn").click(function(){
+        var invoiceId = $(this).data('id');
+        // $.post( "invoices/delete", {id: invoiceId});
+        $.ajax({
+            type:'POST',
+            url:'/invoices/delete',
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            data: {id: invoiceId},
+            success:function(data){
+               location.replace('/');
+            }
+         });
     });
 });

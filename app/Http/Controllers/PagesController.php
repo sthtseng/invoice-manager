@@ -148,4 +148,15 @@ class PagesController extends Controller
 
 		return redirect('/');
 	}
+
+	/**
+	 * Deletes invoice
+	 */
+	public function delete() {
+		$invoice = \App\Invoice::find(request('id'));
+		$invoice->deleted = 1;
+		$invoice->save();
+
+		return redirect('/');
+	}
 }

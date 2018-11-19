@@ -12,8 +12,7 @@
 				<th scope="col">Address</th>
 				<th scope="col">Invoice Date</th>
 				<th scope="col">Due Date</th>
-				<th scope="col">Note</th>
-				<th scope="col"></th>
+				<th scope="col">Actions</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -24,8 +23,15 @@
 					<td>{{ $invoice->address }}</td>
 					<td>{{ $invoice->invoice_date }}</td>
 					<td>{{ $invoice->due_date }}</td>
-					<td>{{ $invoice->note }}</td>
-					<td><a class="btn btn-primary btn-sm" href="/invoices/{{$invoice->id}}" role="button">Edit</a></td>
+					<td>
+						<a class="btn btn-primary btn-sm" href="/invoices/{{$invoice->id}}" role="button">
+							Edit
+						</a>
+						<a class="btn btn-danger btn-sm delete-invoice-btn" data-id={{$invoice->id}} 
+							href="#" role="button">
+							Delete
+						</a>
+					</td>
 				</tr>
 			@endforeach
 		</tbody>

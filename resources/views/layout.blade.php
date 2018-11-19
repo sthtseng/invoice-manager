@@ -6,6 +6,7 @@ header('Content-Type: text/html; charset=utf-8');
 	<head>
 		<title>@yield('title', 'Invoice Manager')</title>
 		<link rel="stylesheet" type="text/css" href="/css/app.css">
+		<meta name="csrf-token" content="{{ csrf_token() }}" />
 	</head>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">

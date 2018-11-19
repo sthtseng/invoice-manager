@@ -117,6 +117,10 @@
 
 
 				<button class="btn btn-success" type='submit' class="form-control" >Update</button>
+				<a class="btn btn-danger delete-invoice-btn" data-id={{$invoice->id}} 
+						href="#" role="button">
+						Delete this Invoice
+				</a>
 			</form>
 
 			<div class='product-row-template' style='display:none'>
